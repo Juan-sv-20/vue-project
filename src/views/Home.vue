@@ -4,33 +4,52 @@
       <img alt="Vue logo" src="../assets/logo.png" />
       <HelloWorld msg="Welcome to Your Vue.js App" />
     -->
-    <todo-item v-for="cosa in cosas"
-      v-bind:data="cosa"
-      v-bind:key="cosa.id"
-    >
-    </todo-item>
+    <Eslogan></Eslogan>
+    <Product></Product>
+
+    <div class="banner">
+      <span>Ingresa a nuestra pagina de facebook para conocer mas sobre VEGANISIMO, aprender como cuidar tu salud de manera saludable <a :href="urlFacebook" target="_blank"><i class="fab fa-facebook-square"></i></a></span>
+    </div>
+
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 // @ is an alias to /src
-//import HelloWorld from "@/components/HelloWorld.vue";
 
-import todoItem from "@/components/li-item.vue";
+import Product from "@/components/product.vue";
+import Eslogan from "@/components/eslogan.vue";
 
 export default {
   name: "Home",
   data() {
     return {
-      cosas: [
-      { id: 0, text: "Vegetales" },
-      { id: 1, text: "Frutas" },
-      { id: 2, text: "Carne" }
-    ]
-    }
+      urlFacebook: 'https://www.facebook.com/Veganisimo-ensenada-100760355259842',
+    };
   },
   components: {
-    todoItem
+    Product,
+    Eslogan,
   }
 };
 </script>
+
+<style lang="scss">
+  .banner {
+    margin: 15px auto;
+    width: 90%;
+    text-align: center;
+
+    span {
+      font-size: 15px;
+      font-family: 'Laila', serif;
+      color: #444;
+
+      i{
+        font-size: 25px;
+        color: #444;
+      }
+    }
+  }
+</style>
