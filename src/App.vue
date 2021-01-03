@@ -19,12 +19,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
   @import url('../src/styles/normalize.css');
   .app { 
     width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-rows: 100px 1fr 50px;
+  }
+  @media only screen and (max-width: 800px) {
+      .app {
+        grid-template-rows: 180px 1fr 50px;
+      }
   }
 </style>

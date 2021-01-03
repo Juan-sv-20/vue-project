@@ -1,6 +1,6 @@
 <template>
     <div class="eslogan">
-        <p class="eslogan__p">Por que lo saludable tambien es rico</p>
+        <h1 class="eslogan__h1">Por que lo saludable tambien es rico</h1>
     </div>
 </template>
 
@@ -12,15 +12,25 @@ export default {
 
 <style lang="scss">
     .eslogan {
-        height: 55px;
-        margin-top: 20px;
+        height: auto;
+        margin: 20px 0;
         display: flex;
         justify-content: center;
 
-        &__p {
+        &__h1 {
             font-family: 'Parisienne', cursive;
             font-size: 35px;
             color: #444;
+        }
+    }
+    @media only screen and (max-width: 1000px) {
+        .eslogan__h1 {
+            font-size: 25px;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        .eslogan__h1 {
+            font-size: 20px;
         }
     }
 </style>

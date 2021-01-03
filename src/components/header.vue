@@ -1,17 +1,19 @@
 <template>
   <div class="nav">
-      <div class="nav__logo">
-          <div class="nav__logo-img">
-              <img src="../assets/logo-v.png" alt="">
-          </div>
-          <div class="nav__logo-span">
-              <span>EGANISIMO</span>
-          </div>
-      </div>
-      <div class="nav__menu">
-          <ul class="nav__menu-ul">
-              <li class="nav__menu-ul-li" v-for="(page, index) in pages" :key="index"><a class="menu__ul-li-a" :href="page.route">{{ page.name }}</a></li>
-          </ul>
+      <div class="nav-normal">
+            <div class="nav-normal__logo">
+                <div class="nav-normal__logo-img">
+                    <img src="../assets/logo-v.png" alt="">
+                </div>
+                <div class="nav-normal__logo-span">
+                    <span>EGANISIMO</span>
+                </div>
+            </div>
+            <div class="nav-normal__menu">
+                <ul class="nav-normal__menu-ul">
+                    <li class="nav-normal__menu-ul-li" v-for="(page, index) in pages" :key="index"><a class="menu__ul-li-a" :href="page.route">{{ page.name }}</a></li>
+                </ul>
+            </div>
       </div>
   </div>
 </template>
@@ -31,6 +33,18 @@ export default {
                     route: '/about',
                 },
             ],
+            isOpenMenu: false,
+            menuActive: 'menu-disable',
+        }
+    },
+    watch: {
+        isOpenMenu: function(){
+            this.menuActive = this.isOpenMenu ? 'menu-active' : 'menu-disable';
+        }
+    },
+    methods: {
+        isOpen() {
+            this.isOpenMenu = !this.isOpenMenu;
         }
     }
 }
@@ -40,7 +54,7 @@ export default {
 
     $size: 100px;
 
-    .nav {
+    .nav-normal {
         height: $size;
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -100,6 +114,55 @@ export default {
 
                     a {
                         color: #2D6123;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        .nav {
+            height: 180px;
+            &-normal {
+                height: 100%;
+                grid-template-rows: 100px 1fr;
+                grid-template-columns: none;
+
+                &__logo {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    margin: auto;
+
+                    &-img {
+                        width: $size * .75;;
+                        height: $size;
+
+                        img {
+                            width: $size * .75;
+                            height: $size;
+                            margin-left: 0;
+                        }
+                    }
+                    &-span {
+                        display: none;
+                    }
+                }
+
+                &__menu {
+                    display: flex;
+                    justify-content: center;
+
+                    &-ul {
+                        flex-basis: 300px;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+
+                        &-li {
+                            font-size: 20px;
+                            margin: auto;
+                            padding-bottom: 10px;
+
+                        }
                     }
                 }
             }

@@ -63,4 +63,12 @@ export default {
             }
         }
     }
+
+    @media only screen and (max-width: 800px) {
+        .footer {
+            .copyright {
+                font-size: 15px;
+            }
+        }
+    }
 </style>

@@ -48,4 +48,13 @@ export default {
             color: #444;
         }
     }
+
+    @media only screen and (max-width: 1000px) {
+        .container-info__title {
+            font-size: 18px;
+        }
+        .container-info__text {
+            font-size: 15px;
+        }
+    }
 </style>

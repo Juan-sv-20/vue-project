@@ -28,11 +28,14 @@ export default {
 
 <style lang="scss">
 @import url('../styles/normalize.css');
+
+$width: 100vw;
+
     .me {
-        height: 300px;
+        height: auto;
         width: 95%;
         display: grid;
-        margin: 3em 2%;
+        margin: 2em 2.5%;
         padding: 12px;
         grid-template-columns: 300px 1fr;
         grid-column-gap: 25px;
@@ -43,6 +46,7 @@ export default {
         &__div-img {
 
             height: 90%;
+            margin: auto;
 
             img {
                 width: 100%;
@@ -69,4 +73,32 @@ export default {
         }
     }
 
+    @media only screen and (max-width: 1000px) {
+        .me {
+            margin: 2em 5%;
+            width: $width * .9;
+            grid-template-rows: ($width * .8) 1fr;
+            grid-template-columns: none;
+
+
+            &__div-img {
+
+                height: 85%;
+                width: 85%;
+                margin: auto;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    box-shadow: 0 0 2px 2px #ddd;
+                    object-fit: cover;
+                }
+            }
+            &__div-p {
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+        }
+    }
 </style>
