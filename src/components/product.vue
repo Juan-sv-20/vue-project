@@ -66,8 +66,37 @@ export default {
                 color: #444;
 
                 h4 {
-                    margin: auto 25px;
+                    margin: auto;
                     font-size: 25px;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 800px) {
+        .container {
+            width: 90vw;
+            height: auto;
+            grid-template-rows: 70px 1fr;
+
+            &__div {
+                grid-template-columns: none;
+                grid-template-rows: 60% 1fr;
+
+                &-img {
+                    width: 85%;
+                    height: 85%;
+                    margin: auto;
+                }
+
+                &-description {
+                    h4 {
+                        font-size: 25px;
+                    }
+                    p {
+                        font-size: 15px;
+                        text-align: center;
+                        margin: auto;
+                    }
                 }
             }
         }

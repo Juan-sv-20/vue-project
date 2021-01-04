@@ -68,6 +68,7 @@ export default {
         .footer {
             .copyright {
                 font-size: 15px;
+                text-align: center;
             }
         }
     }

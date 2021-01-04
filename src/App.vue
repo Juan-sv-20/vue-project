@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Header></Header>
+    <Header class="header-app"></Header>
     <router-view />
     <Footer></Footer>
   </div>
@@ -20,8 +20,12 @@ export default {
 </script>
 
 <style lang="scss">
-
   @import url('../src/styles/normalize.css');
+
+  .header-app {
+    position: sticky;
+  }
+
   .app { 
     width: 100vw;
     height: 100vh;

@@ -5,7 +5,7 @@
       <HelloWorld msg="Welcome to Your Vue.js App" />
     -->
     <Eslogan></Eslogan>
-    <Product></Product>
+    <Product class="pro"></Product>
 
     <div class="banner">
       <span>Ingresa a nuestra pagina de facebook para conocer mas sobre VEGANISIMO, aprender como cuidar tu salud de manera saludable <a :href="urlFacebook" target="_blank"><i class="fab fa-facebook-square"></i></a></span>
@@ -36,10 +36,14 @@ export default {
 </script>
 
 <style lang="scss">
+
   .banner {
-    margin: 15px auto;
+    margin: 135px auto;
     width: 90%;
     text-align: center;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 2px 2px #ddd;
+    padding: 15px;
 
     span {
       font-size: 15px;
@@ -52,4 +56,13 @@ export default {
       }
     }
   }
+
+   @media only screen and (max-width: 800px)  {
+     .banner {
+       font-size: 10px;
+       i {
+         font-size: 20px;
+       }
+     }
+   }
 </style>
