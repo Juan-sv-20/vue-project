@@ -25,11 +25,15 @@ export default {
         return {
             pages: [
                 {
-                    name: 'HOME',
+                    name: 'INICIO',
                     route: '/',
                 },
                 {
-                    name: 'ABOUT US',
+                    name: 'BLOG',
+                    route: '/blog',
+                },
+                {
+                    name: 'NOSOTROS',
                     route: '/about',
                 },
             ],
@@ -95,7 +99,7 @@ export default {
             &-ul {
                 flex-basis: 300px;
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
 
                 &-li {
                     list-style-type: none;
@@ -153,9 +157,9 @@ export default {
                     justify-content: center;
 
                     &-ul {
-                        flex-basis: 300px;
+                        flex-basis: auto;
                         display: grid;
-                        grid-template-columns: 1fr 1fr;
+                        grid-template-columns: 1fr 1fr 1fr;
 
                         &-li {
                             font-size: 20px;
