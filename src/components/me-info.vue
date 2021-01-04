@@ -75,8 +75,8 @@ $width: 100vw;
 
     @media only screen and (max-width: 1000px) {
         .me {
-            margin: 2em 5%;
-            width: $width * .9;
+            margin: 2em 2.5%;
+            width: $width * .95;
             grid-template-rows: ($width * .8) 1fr;
             grid-template-columns: none;
 
